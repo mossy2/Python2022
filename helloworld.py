@@ -1,0 +1,16 @@
+print("helloworld")
+print("top text\nbotom text")
+print("34+65")
+print(5/2)
+print(5//2)
+print(5%2)
+'''
+print("hello world"+24)
+print("hello world"-24)
+print("hello world"/5)
+'''
+print("hello world" * 5)
+str(55+65)
+int(55.0)
+float(44+10)
+int("hello world")

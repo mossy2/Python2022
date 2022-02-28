@@ -1,0 +1,4 @@
+print("helloworld")
+print("top text\nbotom text")
+print("34+65")
+
