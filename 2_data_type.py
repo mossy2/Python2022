@@ -25,6 +25,13 @@ print(2.4*8)
 print(4*7)
 print("amos"*10)
 print("amos\n"*10)
+print(int(5+10))
+print(int(15/2))
+print(int(30/2*5))
+
+
+
+
 
 
 
