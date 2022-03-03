@@ -28,6 +28,7 @@ print("amos\n"*10)
 print(int(5+10))
 print(int(15/2))
 print(int(30/2*5))
+print(int(30/2*5))
 
 
 
