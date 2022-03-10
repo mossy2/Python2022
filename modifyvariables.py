@@ -17,3 +17,15 @@ money=money-tops
 print(f"money={money}")
 print("buying a pair of pants")
 print(money-pants)
+print(f"you now have {money-pants} dollars left")
+money=money-pants
+print(f"money={money}")
+print("buying a belt")
+print(money-belts)
+print(f"you now have {money-belts} dollars left")
+money=money-belts
+print(f"money={money}")
+print("buying a pair of shoes")
+print(money-shoes)
+print(f"you now have {money-shoes} dollars left")
+money=money-shoes
