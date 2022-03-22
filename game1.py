@@ -28,7 +28,7 @@ spaceship = Room("""
 	The brigde if the spaceship is shiny and white, with thousands 
 	of small, red, blinking lights.
 	""")
-
+#variables
 current_room = space
 
 @when("enterlock")
@@ -55,9 +55,6 @@ else:
 
 
 
-
-
 if __name__ == '__main__':
 	main()
-
 
