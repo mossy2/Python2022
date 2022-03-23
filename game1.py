@@ -28,6 +28,28 @@ spaceship = Room("""
 	The brigde if the spaceship is shiny and white, with thousands 
 	of small, red, blinking lights.
 	""")
+
+hallway = Room("""
+	The hallway connecting all the rooms
+	""")
+
+quarters = Room("""
+	The captains private quarters
+	""")
+
+bridge = Room("""
+	Basically the cockpit
+	""")
+
+cargo = Room("""
+	All the ships shipment
+	""")
+
+spaceship.east = hallway
+spaceship.south = quarters
+hallway.east == bridge
+hallway.north = cargo
+
 #variables
 current_room = space
 
@@ -41,17 +63,15 @@ def enter_spaceship():
 		say("There is no airlock here")
 		return
 
-
+'''
 else:
 	current_room = spaceship
 	print("""You heave yourself into the the spaceship and 
 	slam your hand on the button to close the door.
 	""")
 	print(current_room)
+'''
 	
-
-
-
 
 
 
