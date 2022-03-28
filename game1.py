@@ -1,21 +1,5 @@
 from adventurelib import *
 
-def main():
-	start()
-@when("brush teeth")
-@when("brush")
-@when("clean teeth")
-def brush_teeth():
-	print("brushing teeth")
-
-@when("comb hair")
-@when("comb")
-def comb_hair():
-	say("""
-		You brush your long flowing locks with
-		the gold hairbrush that you have selected from the 
-		in the red basket
-		""")
 
 
 space = Room("""
@@ -25,7 +9,7 @@ space = Room("""
 	""")
 
 spaceship = Room("""
-	The brigde if the spaceship is shiny and white, with thousands 
+	The spaceship is shiny and white, with thousands 
 	of small, red, blinking lights.
 	""")
 
@@ -45,12 +29,6 @@ cargo = Room("""
 	All the ships shipment
 	""")
 
-spaceship.east = hallway
-spaceship.south = quarters
-hallway.east == bridge
-hallway.north = cargo
-
-#variables
 current_room = space
 
 @when("enterlock")
@@ -62,19 +40,18 @@ def enter_spaceship():
 	if current_room is not space:
 		say("There is no airlock here")
 		return
-
-'''
-else:
-	current_room = spaceship
-	print("""You heave yourself into the the spaceship and 
-	slam your hand on the button to close the door.
-	""")
-	print(current_room)
-'''
-	
+	else:
+		current_room = spaceship
+		print("""You heave yourself into the spaceship and 
+		slam your hand on the button to close the door.
+		""")
+		print(current_room)
 
 
+def main():
+	start()
 
 if __name__ == '__main__':
 	main()
+	
 
