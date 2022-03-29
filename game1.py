@@ -28,8 +28,27 @@ bridge = Room("""
 cargo = Room("""
 	All the ships shipment
 	""")
-
+#variables
 current_room = space
+
+spaceship.east = hallway
+spaceship.south = quarters
+hallway.east == bridge
+hallway.north = cargo
+
+@when ("go DIRECTION")
+def travel(direction):
+	global current_room
+	if direction in current_room.exits():
+		current_room = current_room.exits(direction)
+		print(f"You go {direction}.")
+		print(current_room)
+		print(current_room.exits())
+
+@when ("look")
+def current_room():
+	global current_room
+	print(current_room)
 
 @when("enterlock")
 @when("enter spaceship")
@@ -40,6 +59,7 @@ def enter_spaceship():
 	if current_room is not space:
 		say("There is no airlock here")
 		return
+	
 	else:
 		current_room = spaceship
 		print("""You heave yourself into the spaceship and 
