@@ -27,8 +27,9 @@ bridge = Room("""
 cargo = Room("""
 	All the ships shipment
 	""")
-#variables
+#define variables
 current_room = space
+inventory = Bag()
 
 spaceship.east = hallway
 spaceship.south = quarters
@@ -63,12 +64,12 @@ def enter_spaceship():
 @when("look")
 def look():
 	print(current_room)
-	print(f"there are exits to the {current_room.exits()}.")
-	if len(current_room.items)>0:
+	print(f"There are exits to the {current_room.exits()}.")
+	if len(current_room.items)> 0: #if there are some items in the room
 		print("you also see:")
-		for item in current_room.item:
-			print(item)
-
+			for item in current_room.items:
+				print(item)#print out each item
+		
 #define Items
 Item.description = "" #this adds a blank description to each item
 
@@ -76,7 +77,11 @@ knife = Item("a dirty knife","knife")
 knife.description = "the knife has a dull sheen to it but it looks rather sharp."
 
 red_keycard = Item("a red keycard","keycard","red card","red card")
-red_keycard.description = "It's a red keycard"
+red_keycard.description = "It's a red keycard. It probably opens a door or a locker."
+
+gun = Item("A glock","gun")
+gun.description = "the gun has no ammo in it and is black."
+
 
 
 def main():
