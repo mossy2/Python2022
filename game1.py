@@ -4,13 +4,12 @@ from adventurelib import *
 
 space = Room("""
 	You are drifting in space. It feels very cold. 
-	A slate-blue spaceship sits completely silently to your left, 
-	it's airlock open and waiting.
+	A slate-blue spaceship sits completely silently to your left, it's airlock open and waiting.
+
 	""")
 
 spaceship = Room("""
-	The spaceship is shiny and white, with thousands 
-	of small, red, blinking lights.
+	The spaceship is shiny and white, with thousands of small, red, blinking lights.
 	""")
 
 hallway = Room("""
@@ -57,14 +56,28 @@ def enter_spaceship():
 	
 	else:
 		current_room = space
-		print("""You heave yourself into the spaceship and 
-		slam your hand on the button to close the door.
+		print("""You heave yourself into the spaceship and slam your hand on the button to close the door.
 		""")
-		print(current_room)
+		
 
 @when("look")
 def look():
-print("current room")
+	print(current_room)
+	print(f"there are exits to the {current_room.exits()}.")
+	if len(current_room.items)>0:
+		print("you also see:")
+		for item in current_room.item:
+			print(item)
+
+#define Items
+Item.description = "" #this adds a blank description to each item
+
+knife = Item("a dirty knife","knife")
+knife.description = "the knife has a dull sheen to it but it looks rather sharp."
+
+red_keycard = Item("a red keycard","keycard","red card","red card")
+red_keycard.description = "It's a red keycard"
+
 
 def main():
 	start()
