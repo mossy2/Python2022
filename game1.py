@@ -36,7 +36,7 @@ spaceship.south = quarters
 hallway.east == bridge
 hallway.north = cargo
 
-@when ("go DIRECTION")
+@when("go DIRECTION")
 def travel(direction):
 	global current_room
 	if direction in current_room.exits():
@@ -44,12 +44,7 @@ def travel(direction):
 		print(f"You go {direction}.")
 		print(current_room)
 		print(current_room.exits())
-
-@when ("look")
-def current_room():
-	global current_room
-	print(current_room)
-
+		
 @when("enterlock")
 @when("enter spaceship")
 @when("enter ship")
@@ -61,12 +56,15 @@ def enter_spaceship():
 		return
 	
 	else:
-		current_room = spaceship
+		current_room = space
 		print("""You heave yourself into the spaceship and 
 		slam your hand on the button to close the door.
 		""")
 		print(current_room)
 
+@when("look")
+def look():
+print("current room")
 
 def main():
 	start()
