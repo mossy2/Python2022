@@ -65,11 +65,11 @@ def enter_spaceship():
 def look():
 	print(current_room)
 	print(f"There are exits to the {current_room.exits()}.")
-	if len(current_room.items)> 0: #if there are some items in the room
-		print("you also see:")
-			for item in current_room.items:
-				print(item)#print out each item
-		
+		if len(current_room.items)> 0: #if there are some items in the room
+			print("you also see:")
+				for item in current_room.items:
+					print(item)#print out each item
+			
 #define Items
 Item.description = "" #this adds a blank description to each item
 
