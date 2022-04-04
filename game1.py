@@ -1,4 +1,5 @@
 from adventurelib import *
+Room.items = Bag()
 
 
 
@@ -46,8 +47,8 @@ def travel(direction):
 		print(current_room.exits())
 		
 @when("enterlock")
-@when("enter spaceship")
-@when("enter ship")
+@when("enterspaceship")
+@when("entership")
 def enter_spaceship():
 	global current_room
 	#check if action can be done
@@ -65,10 +66,10 @@ def enter_spaceship():
 def look():
 	print(current_room)
 	print(f"There are exits to the {current_room.exits()}.")
-	if len(current_room.items)> 0: #if there are some items in the room
-		print("you also see:")
+	if len(current_room.items) > 0:
+		print("you also see: ")
 		for item in current_room.items:
-			print(item)#print out each item
+			print(item)
 			
 #define Items
 Item.description = "" #this adds a blank description to each item
