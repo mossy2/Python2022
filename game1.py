@@ -2,15 +2,16 @@ from adventurelib import *
 Room.items = Bag()
 
 
-
+#Define rooms
 space = Room("""
 	You are drifting in space. It feels very cold. 
-	A slate-blue spaceship sits completely silently to your left, it's airlock open and waiting.
-
+	A slate-blue spaceship sits completely silently to your left, 
+	it's airlock open and waiting.
 	""")
 
 spaceship = Room("""
-	The spaceship is shiny and white, with thousands of small, red, blinking lights.
+	The spaceship is shiny and white, with thousands 
+	of small, red, blinking lights.
 	""")
 
 hallway = Room("""
@@ -28,15 +29,41 @@ bridge = Room("""
 cargo = Room("""
 	All the ships shipment
 	""")
-#define variables
-current_room = space
-inventory = Bag()
+
+
 
 spaceship.east = hallway
 spaceship.south = quarters
 hallway.east == bridge
 hallway.north = cargo
 
+
+
+
+#define Items
+Item.description = "" #this adds a blank description to each item
+
+knife = Item("a dirty knife","knife")
+knife.description = "the knife has a dull sheen to it but it looks rather sharp."
+
+red_keycard = Item("a red keycard","keycard","red card","red card")
+red_keycard.description = "It's a red keycard. It probably opens a door or a locker."
+
+gun = Item("A glock","gun")
+gun.description = "the gun has no ammunition in it."
+
+
+
+
+#defines variables
+current_room = space
+inventory = Bag()
+
+
+
+
+
+#binds
 @when("go DIRECTION")
 def travel(direction):
 	global current_room
@@ -71,17 +98,7 @@ def look():
 		for item in current_room.items:
 			print(item)
 			
-#define Items
-Item.description = "" #this adds a blank description to each item
 
-knife = Item("a dirty knife","knife")
-knife.description = "the knife has a dull sheen to it but it looks rather sharp."
-
-red_keycard = Item("a red keycard","keycard","red card","red card")
-red_keycard.description = "It's a red keycard. It probably opens a door or a locker."
-
-gun = Item("A glock","gun")
-gun.description = "the gun has no ammo in it and is black."
 
 
 
